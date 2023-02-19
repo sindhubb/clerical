@@ -1,9 +1,9 @@
-(ns make-docs
+(ns docs
   (:require [nextjournal.clerk :as clerk]
             [clojure.java.io :refer [file]])
   (:gen-class))
 
-(def inpath "src/clj")
+(def inpath "src/{{name}}")
 
 (defn files
   []

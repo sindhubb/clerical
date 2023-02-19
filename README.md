@@ -1,23 +1,22 @@
-## What is this?
+# io.bytebeam/clerical
 
-This is a repository will familiarise you with basics of Clojure.
-This repository uses Uses [Clerk](https://github.com/nextjournal/clerk) to show up as notebook.
+A Leiningen template for FIXME.
 
-## Where to see this stuff?
+## Usage
 
-https://sindhubb.github.io/clerk-clojure/
+FIXME
 
-## How to run this to contribute?
+## License
 
-1. Install dependencies with `lein deps` 
-2. Run `lein start-clerk <PORT>` where PORT can be any port you want
-3. Hit Ctrl + S on a clojure file (save the file)
-4. Browse `http://localhost:<PORT>` to see the live notebook
+Copyright © 2023 FIXME
 
-## How to get HTML?
+This program and the accompanying materials are made available under the
+terms of the Eclipse Public License 2.0 which is available at
+http://www.eclipse.org/legal/epl-2.0.
 
-Run `lein make-docs` and you should see html files generated under `src/<name-of-dir>`
-
-## How to view HTML?
-
-You can open `./docs/index.html` in any browser and browse as you normally would. You can also serve these HTML files with `lein ring server-headless <PORT>` 
+This Source Code may also be made available under the following Secondary
+Licenses when the conditions for such availability set forth in the Eclipse
+Public License, v. 2.0 are satisfied: GNU General Public License as published by
+the Free Software Foundation, either version 2 of the License, or (at your
+option) any later version, with the GNU Classpath Exception which is available
+at https://www.gnu.org/software/classpath/license.html.
