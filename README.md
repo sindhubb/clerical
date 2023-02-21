@@ -8,7 +8,7 @@ You can then run `lein make-docs` and push the repo to Github.
 
 For example: 
 * [sindhubb.github.io/clerk-clojure](https://sindhubb.github.io/clerk-clojure)
-* [sindhubb.github.io/advent/](https://sindhubb.github.io/advent/)
-* [sindhubb.github.io/clojure-koans/](https://sindhubb.github.io/clojure-koans/)
+* [sindhubb.github.io/advent/](https://sindhubb.github.io/clerk-advent/)
+* [sindhubb.github.io/clerk-mocking/](https://sindhubb.github.io/clerk-mocking-testing/)
 * [sindhubb.github.io/clerk-databases/](https://sindhubb.github.io/clerk-databases/)
-
+* [sindhubb.github.io/clojure-koans/](https://sindhubb.github.io/clojure-koans/)
