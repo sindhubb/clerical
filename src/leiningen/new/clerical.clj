@@ -1,14 +1,26 @@
 (ns leiningen.new.clerical
   (:require [leiningen.new.templates :as tmpl]
-            [leiningen.core.main :as main]))
+            [leiningen.core.main :as main])
+  (:import [java.nio.file Files FileSystems]
+           [java.nio.file.attribute FileAttribute]))
 
 (def render (tmpl/renderer "clerical"))
+
+(defn strings [& rest] (into-array String rest))
+(defn attrs [& rest] (into-array FileAttribute rest))
+
+(defn create-sim-link [dir link target]
+  (let [fs (FileSystems/getDefault)
+        link-path (.getPath fs dir (strings link))
+        target-path (.getPath fs dir (strings target))]
+    (Files/createSymbolicLink link-path target-path (attrs))))
 
 (defn clerical
   "Function to generate a project with Clerk added."
   [name]
-  (let [data {:name name
-              :sanitized (tmpl/name-to-path name)
+  (let [sanitized (tmpl/name-to-path name)
+        data {:name name
+              :sanitized sanitized
               :url (str "https://github.com/your-username/" name)}]
     (main/info "Generating a fresh project with Clerk added!")
     (tmpl/->files data
@@ -19,4 +31,5 @@
                   ["src/docs.clj" (render "src/docs.clj" data)]
                   ["src/clerk.clj" (render "src/clerk.clj" data)]
                   ["project.clj" (render "project.clj" data)]
-                  ["README.md" (render "README.md" data)])))
+                  ["README.md" (render "README.md" data)])
+    (create-sim-link sanitized "docs" "resources/docs")))
